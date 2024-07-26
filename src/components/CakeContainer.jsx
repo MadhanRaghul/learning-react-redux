@@ -13,8 +13,8 @@ const CakeContainer = () => {
     <div>
         <h2>Number of cakes: {numOfCakes}</h2>
         <button onClick={() => dispatch(ordered())}>Buy cake</button> <br />
-        <input type="text" onChange={(e) => (setCount(event.target.value))} />
-        <button onClick={() => dispatch(restocked(1))}>Restock</button>
+        <input type="number" onChange={(e) => setCount(e.target.value)} />
+        <button onClick={() => dispatch(restocked(/* count */))}>Restock</button>
     </div>
   )
 }
