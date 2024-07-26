@@ -1,6 +1,10 @@
-import { createStore } from "redux";
-import cakeReducer from "./cake/cakeReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import cakeReducer from "./cakeSlice"
 
-const store = createStore(cakeReducer)
+const store = configureStore({
+    reducer: {
+        cake: cakeReducer
+    }
+});
 
-export default store
+export default store;
