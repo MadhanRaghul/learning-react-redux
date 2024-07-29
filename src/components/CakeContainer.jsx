@@ -16,6 +16,6 @@ const CakeContainer = () => {
         <button onClick={() => dispatch(restocked(count))}>Restock</button>
     </div>
   )
-}
+} 
 
 export default CakeContainer
