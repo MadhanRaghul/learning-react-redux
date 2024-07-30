@@ -9,13 +9,13 @@ const CakeContainer = () => {
   const dispatch = useDispatch()
 
   return (
-    <div id="abc">
+    <div>
         <h2>Number of cakes: {numOfCakes}</h2>
         <button onClick={() => dispatch(ordered())}>Buy cake</button> <br />
         <input type="number" onChange={(e) => setCount(parseInt(e.target.value))} />
         <button onClick={() => dispatch(restocked(count))}>Restock</button>
     </div>
   )
-} 
+}
 
 export default CakeContainer

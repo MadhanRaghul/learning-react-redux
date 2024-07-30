@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers } from '../redux/userSlice'
 
 const UserContainer = () => {
-    const user = useSelector((state) => state.user)
     const dispatch = useDispatch()
+    const user = useSelector((state) => state.user)
+
     useEffect(() => {
         dispatch(fetchUsers())
     }, [])
@@ -15,12 +16,12 @@ const UserContainer = () => {
         <h2>LIST OF USERS</h2>
         {user.loading && <div>Loading...</div>}
         {!user.loading && user.error ? <div>Error: {user.error}</div> : null}
-        {!user.loading && user.length ? (
-            <ul>
+        {!user.loading && user.users.length ? (
+            <ol>
                     {user.users.map((user) => (
                         <li key={user.id}>{user.name}</li>
                     ))}
-            </ul>
+            </ol>
         ) : null}
     </>
   )
